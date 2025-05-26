@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculette -21 jours</title>
+</head>
+<body>
+<h1>Calculette -21 jours</h1>
+<label for="dateInput">Entrez une date :</label>
+<input type="date" id="dateInput">
+<br><br>
+<button onclick="calculerDate()">Calculer</button>
+<h2>Résultat :</h2>
+<p id="resultat"></p>
+ 
+    <script>
+        function calculerDate() {
+            var dateEntree = document.getElementById('dateInput').value;
+            if (dateEntree) {
+                var date = new Date(dateEntree);
+                date.setDate(date.getDate() - 21); // soustraire 21 jours
+                document.getElementById('resultat').innerText = "La date -21 jours est : " + date.toLocaleDateString();
+            } else {
+                document.getElementById('resultat').innerText = "Veuillez entrer une date valide.";
+            }
+        }
+</script>
+</body>
+</html>
